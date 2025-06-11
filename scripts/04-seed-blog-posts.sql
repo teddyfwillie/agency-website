@@ -1,0 +1,93 @@
+-- Seed blog posts
+INSERT INTO blog_posts (title, slug, excerpt, content, featured_image, category, author_name, author_avatar, published, featured, read_time) VALUES
+(
+  'The Complete Guide to Website Conversion Optimization in 2024',
+  'complete-guide-conversion-optimization-2024',
+  'Discover the proven strategies and tactics that can increase your website''s conversion rate by up to 300%. This comprehensive guide covers everything from psychology to technical implementation.',
+  'Website conversion optimization is the systematic process of increasing the percentage of website visitors who complete a desired action. In this comprehensive guide, we''ll explore the latest strategies and techniques that can dramatically improve your conversion rates...',
+  '/placeholder.svg?height=400&width=600',
+  'Conversion Optimization',
+  'Sarah Chen',
+  '/placeholder.svg?height=60&width=60',
+  true,
+  true,
+  12
+),
+(
+  'Mobile-First Design: Why It''s Critical for Modern Websites',
+  'mobile-first-design-critical-modern-websites',
+  'Learn why mobile-first design isn''t just a trend—it''s essential for user experience and SEO success.',
+  'Mobile-first design has evolved from a nice-to-have to an absolute necessity. With over 60% of web traffic coming from mobile devices, designing for mobile first ensures your website provides an optimal experience for the majority of your users...',
+  '/placeholder.svg?height=250&width=400',
+  'Web Design',
+  'Marcus Rodriguez',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  8
+),
+(
+  '10 E-commerce Conversion Tactics That Actually Work',
+  'ecommerce-conversion-tactics-that-work',
+  'Proven strategies to turn more visitors into customers and increase your average order value.',
+  'E-commerce conversion optimization requires a different approach than traditional websites. In this article, we''ll explore 10 proven tactics that have helped our clients increase their online sales by an average of 180%...',
+  '/placeholder.svg?height=250&width=400',
+  'E-commerce',
+  'David Kim',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  10
+),
+(
+  'How to Make Your Website Load in Under 3 Seconds',
+  'website-speed-optimization-under-3-seconds',
+  'Step-by-step guide to optimizing your website''s performance for better user experience and SEO.',
+  'Website speed is crucial for both user experience and search engine rankings. Studies show that a 1-second delay in page load time can result in a 7% reduction in conversions. Here''s how to optimize your site for lightning-fast performance...',
+  '/placeholder.svg?height=250&width=400',
+  'Performance',
+  'Emily Watson',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  9
+),
+(
+  'SEO Best Practices for 2024: What''s Changed?',
+  'seo-best-practices-2024-whats-changed',
+  'Stay updated with the latest SEO trends and algorithm changes that affect your website''s ranking.',
+  'Search engine optimization continues to evolve rapidly. Google''s latest algorithm updates have shifted focus toward user experience signals, E-A-T (Expertise, Authoritativeness, Trustworthiness), and Core Web Vitals...',
+  '/placeholder.svg?height=250&width=400',
+  'SEO',
+  'Alex Johnson',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  11
+),
+(
+  'The Psychology of Web Design: How Colors Affect Conversions',
+  'psychology-web-design-colors-affect-conversions',
+  'Understand how color psychology can influence user behavior and improve your conversion rates.',
+  'Color psychology plays a crucial role in web design and can significantly impact user behavior and conversion rates. Different colors evoke different emotions and can influence purchasing decisions...',
+  '/placeholder.svg?height=250&width=400',
+  'UX Design',
+  'Marcus Rodriguez',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  7
+),
+(
+  'Case Study: How We Increased SaaS Sign-ups by 250%',
+  'case-study-saas-signups-increased-250-percent',
+  'Deep dive into our redesign process for a B2B SaaS company and the strategies that drove results.',
+  'When TechStart SaaS approached us, their conversion rate was stuck at 2.1%. Through strategic redesign and optimization, we helped them achieve a 250% increase in sign-ups. Here''s exactly how we did it...',
+  '/placeholder.svg?height=250&width=400',
+  'Case Studies',
+  'Sarah Chen',
+  '/placeholder.svg?height=40&width=40',
+  true,
+  false,
+  15
+);
