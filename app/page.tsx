@@ -1,11 +1,11 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Star, Users, Zap, Award, CheckCircle } from 'lucide-react'
-import LeadMagnetForm from "@/components/lead-magnet-form"
-import { sql } from "@/lib/db"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Star, Users, Zap, Award, CheckCircle } from "lucide-react";
+import LeadMagnetForm from "@/components/lead-magnet-form";
+import { sql } from "@/lib/db";
 
 async function getFeaturedProjects() {
   try {
@@ -17,16 +17,16 @@ async function getFeaturedProjects() {
       WHERE published = true AND featured = true
       ORDER BY created_at DESC
       LIMIT 3
-    `
-    return projects
+    `;
+    return projects;
   } catch (error) {
-    console.error("Error fetching featured projects:", error)
-    return []
+    console.error("Error fetching featured projects:", error);
+    return [];
   }
 }
 
 export default async function HomePage() {
-  const featuredProjects = await getFeaturedProjects()
+  const featuredProjects = await getFeaturedProjects();
 
   return (
     <div className="min-h-screen">
@@ -46,12 +46,16 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              We design and develop stunning websites that don't just look amazing—they drive results. Get more leads,
-              sales, and growth with a website built for success.
+              We design and develop stunning websites that don't just look
+              amazing—they drive results. Get more leads, sales, and growth with
+              a website built for success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="#free-audit">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg">
+                <Button
+                  size="lg"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg"
+                >
                   Get Your Free Website Audit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -60,7 +64,7 @@ export default async function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg"
+                  className="border-white/20 text-purple-600 hover:bg-white/10 px-8 py-4 text-lg"
                 >
                   View Our Work
                 </Button>
@@ -87,9 +91,12 @@ export default async function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Why Choose Our Agency?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose Our Agency?
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just designers—we're growth partners who understand what it takes to succeed online.
+              We're not just designers—we're growth partners who understand what
+              it takes to succeed online.
             </p>
           </div>
 
@@ -101,8 +108,8 @@ export default async function HomePage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Lightning Fast</h3>
                 <p className="text-gray-600">
-                  Your website will load in under 3 seconds, keeping visitors engaged and improving your search
-                  rankings.
+                  Your website will load in under 3 seconds, keeping visitors
+                  engaged and improving your search rankings.
                 </p>
               </CardContent>
             </Card>
@@ -114,7 +121,8 @@ export default async function HomePage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Conversion Focused</h3>
                 <p className="text-gray-600">
-                  Every element is strategically placed to guide visitors toward taking action and becoming customers.
+                  Every element is strategically placed to guide visitors toward
+                  taking action and becoming customers.
                 </p>
               </CardContent>
             </Card>
@@ -126,7 +134,8 @@ export default async function HomePage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Award Winning</h3>
                 <p className="text-gray-600">
-                  Our designs have won multiple industry awards and consistently outperform the competition.
+                  Our designs have won multiple industry awards and consistently
+                  outperform the competition.
                 </p>
               </CardContent>
             </Card>
@@ -138,30 +147,42 @@ export default async function HomePage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Recent Success Stories</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+              Recent Success Stories
+            </h2>
             <p className="text-xl text-gray-600">
-              See how we've helped businesses like yours achieve remarkable results
+              See how we've helped businesses like yours achieve remarkable
+              results
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
-              <Card key={project.id} className="overflow-hidden hover:shadow-xl transition-shadow">
+              <Card
+                key={project.id}
+                className="overflow-hidden hover:shadow-xl transition-shadow"
+              >
                 <Image
-                  src={project.featured_image || "/placeholder.svg?height=300&width=400"}
+                  src={
+                    project.featured_image ||
+                    "/placeholder.svg?height=300&width=400"
+                  }
                   alt={project.title}
                   width={400}
                   height={300}
                   className="w-full h-48 object-cover"
                 />
                 <CardContent className="p-6">
-                  <Badge className="mb-3 bg-green-100 text-green-800">{project.category}</Badge>
+                  <Badge className="mb-3 bg-green-100 text-green-800">
+                    {project.category}
+                  </Badge>
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.description}</p>
                   <div className="flex items-center text-sm text-gray-500">
                     <Star className="h-4 w-4 text-yellow-400 mr-1" />
                     <span>
-                      {project.results_metric_1_value} {project.results_metric_1_label?.toLowerCase()}
+                      {project.results_metric_1_value}{" "}
+                      {project.results_metric_1_label?.toLowerCase()}
                     </span>
                   </div>
                 </CardContent>
@@ -181,14 +202,20 @@ export default async function HomePage() {
       </section>
 
       {/* Lead Magnet CTA - Now Functional */}
-      <section id="free-audit" className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <section
+        id="free-audit"
+        className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Your FREE Website Audit</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Get Your FREE Website Audit
+              </h2>
               <p className="text-xl mb-8 opacity-90">
-                Discover exactly what's holding your website back from generating more leads and sales. Our comprehensive
-                audit reveals the hidden opportunities in your current site.
+                Discover exactly what's holding your website back from
+                generating more leads and sales. Our comprehensive audit reveals
+                the hidden opportunities in your current site.
               </p>
             </div>
 
@@ -220,14 +247,17 @@ export default async function HomePage() {
               </div>
 
               <div className="bg-white rounded-2xl p-8 text-gray-900">
-                <h3 className="text-2xl font-bold mb-6 text-center">Get Your Free Audit</h3>
+                <h3 className="text-2xl font-bold mb-6 text-center">
+                  Get Your Free Audit
+                </h3>
                 <LeadMagnetForm
                   leadType="website_audit"
                   buttonText="Get My Free Audit"
                   className="space-y-4"
                 />
                 <p className="text-sm text-gray-500 text-center mt-4">
-                  No spam, no sales calls. Just valuable insights delivered within 24 hours.
+                  No spam, no sales calls. Just valuable insights delivered
+                  within 24 hours.
                 </p>
               </div>
             </div>
@@ -235,5 +265,5 @@ export default async function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, ArrowRight } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -17,7 +17,7 @@ export default function Navigation() {
     { href: "/testimonials", label: "Testimonials" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
-  ]
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
@@ -26,9 +26,9 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">D</span>
+              <span className="text-white font-bold text-sm">FC</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">DesignCo</span>
+            <span className="text-xl font-bold text-gray-900">FaithCraft</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,13 +61,23 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <div className="flex items-center justify-between mb-8">
-                <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/"
+                  className="flex items-center space-x-2"
+                  onClick={() => setIsOpen(false)}
+                >
                   <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
+                    <span className="text-white font-bold text-sm">FC</span>
                   </div>
-                  <span className="text-xl font-bold text-gray-900">DesignCo</span>
+                  <span className="text-xl font-bold text-gray-900">
+                    FaithCraft
+                  </span>
                 </Link>
-                <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsOpen(false)}
+                >
                   <X className="h-6 w-6" />
                 </Button>
               </div>
@@ -95,5 +105,5 @@ export default function Navigation() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
