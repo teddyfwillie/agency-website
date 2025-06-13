@@ -24,15 +24,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-3" />
-                <span className="text-sm">123 Design Street, NY 10001</span>
+                <span className="text-sm">
+                  Police Academy Road, Paynesville
+                </span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-3" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 9653-563-214</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-3" />
-                <span className="text-sm">hello@designagency.com</span>
+                <span className="text-sm">hello@faithcraftagency.com</span>
               </div>
             </div>
           </div>

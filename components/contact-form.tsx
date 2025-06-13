@@ -1,13 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,20 +25,22 @@ export default function ContactForm() {
     projectType: "",
     budgetRange: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const [statusMessage, setStatusMessage] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const response = await fetch("/api/contact", {
@@ -41,13 +49,13 @@ export default function ContactForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (response.ok) {
-        setSubmitStatus("success")
-        setStatusMessage(result.message)
+        setSubmitStatus("success");
+        setStatusMessage(result.message);
         // Reset form
         setFormData({
           firstName: "",
@@ -58,24 +66,30 @@ export default function ContactForm() {
           projectType: "",
           budgetRange: "",
           message: "",
-        })
+        });
       } else {
-        setSubmitStatus("error")
-        setStatusMessage(result.error || "Something went wrong. Please try again.")
+        setSubmitStatus("error");
+        setStatusMessage(
+          result.error || "Something went wrong. Please try again."
+        );
       }
     } catch (error) {
-      setSubmitStatus("error")
-      setStatusMessage("Network error. Please check your connection and try again.")
+      setSubmitStatus("error");
+      setStatusMessage(
+        "Network error. Please check your connection and try again."
+      );
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            First Name *
+          </label>
           <Input
             placeholder="John"
             value={formData.firstName}
@@ -84,7 +98,9 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Last Name *
+          </label>
           <Input
             placeholder="Doe"
             value={formData.lastName}
@@ -95,7 +111,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Email Address *
+        </label>
         <Input
           type="email"
           placeholder="john@company.com"
@@ -106,17 +124,21 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Phone Number
+        </label>
         <Input
           type="tel"
-          placeholder="+1 (555) 123-4567"
+          placeholder="+91 9653-563-214"
           value={formData.phone}
           onChange={(e) => handleInputChange("phone", e.target.value)}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Company Name
+        </label>
         <Input
           placeholder="Your Company"
           value={formData.companyName}
@@ -125,8 +147,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
-        <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Project Type *
+        </label>
+        <Select
+          value={formData.projectType}
+          onValueChange={(value) => handleInputChange("projectType", value)}
+        >
           <SelectTrigger>
             <SelectValue placeholder="Select project type" />
           </SelectTrigger>
@@ -142,8 +169,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
-        <Select value={formData.budgetRange} onValueChange={(value) => handleInputChange("budgetRange", value)}>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Budget Range
+        </label>
+        <Select
+          value={formData.budgetRange}
+          onValueChange={(value) => handleInputChange("budgetRange", value)}
+        >
           <SelectTrigger>
             <SelectValue placeholder="Select budget range" />
           </SelectTrigger>
@@ -158,7 +190,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Project Details *</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Project Details *
+        </label>
         <Textarea
           placeholder="Tell us about your project, goals, and any specific requirements..."
           rows={4}
@@ -186,10 +220,14 @@ export default function ContactForm() {
         </div>
       )}
 
-      <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 py-3 text-lg" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        className="w-full bg-purple-600 hover:bg-purple-700 py-3 text-lg"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Sending..." : "Send Message"}
         <ArrowRight className="ml-2 h-5 w-5" />
       </Button>
     </form>
-  )
+  );
 }

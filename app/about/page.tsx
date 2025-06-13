@@ -36,13 +36,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-gray-600">
                 <p className="text-lg">
-                  It all started when our founder, Sarah Chen, was running her
-                  own e-commerce business. Despite having a "beautiful" website,
-                  she wasn't getting the sales she expected.
+                  It all started when our founder, Teddy F. Willie, was running
+                  his own e-commerce business. Despite having a "beautiful"
+                  website, he wasn't getting the sales he expected.
                 </p>
                 <p className="text-lg">
-                  After months of research and testing, she discovered the
-                  problem: her website looked great but wasn't designed for
+                  After months of research and testing, he discovered the
+                  problem: his website looked great but wasn't designed for
                   conversions. That's when everything changed.
                 </p>
                 <p className="text-lg">
@@ -54,7 +54,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="/profile.png?height=500&width=600"
                 alt="Our founder Sarah Chen working on designs"
                 width={600}
                 height={500}
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/teddy.jpeg"
                   alt="Teddy F. Willie - Founder & CEO"
                   width={200}
                   height={200}
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/desire.jpg"
                   alt="Desire K. Zeinway - Lead Designer"
                   width={200}
                   height={200}
@@ -156,7 +156,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/grace.jpg"
                   alt="Grace N. Zeinway - Head of Development"
                   width={200}
                   height={200}
@@ -177,7 +177,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/jobila.jpg"
                   alt="Jobila M. Gbowee - Strategy Director"
                   width={200}
                   height={200}
@@ -197,7 +197,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/lisa.jpg"
                   alt="Lisa Thompson - Project Manager"
                   width={200}
                   height={200}
@@ -217,7 +217,7 @@ export default function AboutPage() {
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-8">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="/alex.jpg"
                   alt="Alex Johnson - SEO Specialist"
                   width={200}
                   height={200}
