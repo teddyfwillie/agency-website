@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +25,13 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">FC</span>
-            </div>
+          <Link href="/" className="flex items-center space-x-1">
+            <Image
+              src="/logo.jpg"
+              alt="FaithCraft Agency Logo"
+              width={70}
+              height={70}
+            />
             <span className="text-xl font-bold text-gray-900">FaithCraft</span>
           </Link>
 

@@ -54,7 +54,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/profile.png?height=500&width=600"
+                src="/profile.jpg?height=500&width=600"
                 alt="Our founder Sarah Chen working on designs"
                 width={600}
                 height={500}

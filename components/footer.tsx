@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import NewsletterForm from "@/components/newsletter-form";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,10 +11,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FC</span>
-              </div>
+            <Link href="/" className="flex items-center space-x-1 mb-6">
+              <Image
+                src="/logo.jpg"
+                alt="FaithCraft Agency Logo"
+                width={70}
+                height={70}
+              />
               <span className="text-xl font-bold">FaithCraft</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
